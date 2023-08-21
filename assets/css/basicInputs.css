@@ -1,0 +1,33 @@
+input,
+select {
+  height: 60px;
+}
+input,
+select,
+input:focus,select:focus {
+  background-color: var(--primary-dark3);
+  border: none;
+  color: var(--white-light);
+  box-shadow: none;
+}
+.input-holder,
+select {
+  max-width: 450px;
+}
+select {
+  background-image: url("/images/arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem top 50%;
+  background-size: 1rem auto;
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+}
+label {
+  color: var(--white-light);
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+.optional {
+  color: var(--secondery-dark1);
+}

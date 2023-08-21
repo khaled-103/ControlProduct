@@ -1,0 +1,55 @@
+:root {
+  --primary-dark1: #16263f;
+  --primary-dark2: #040d21;
+  --primary-dark3: #36415c;
+  --white-light: #fafafa;
+  --primary-blue: #3ac2cb;
+  --secondery-dark1: #a4b4cb;
+  --width-should-sidebar-visible: 992px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.text-light{
+  color: var(--white-light);
+}
+.pointer {
+  cursor: pointer;
+}
+
+.general-table,
+.general-table th,
+.general-table td {
+  border: 1px solid var(--secondery-dark1);
+  color: #fafafa;
+  text-align: center;
+}
+.general-table {
+  width: 100%;
+  overflow: hidden;
+  border-spacing: 0;
+  border-collapse: separate !important;
+  border-style: hidden;
+}
+
+.general-table th,
+.general-table td {
+  height: 60px;
+  text-transform: capitalize;
+}
+tr:first-child th:first-child {
+  border-top-left-radius: 10px;
+}
+tr:first-child th:last-child {
+  border-top-right-radius: 10px;
+}
+tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
