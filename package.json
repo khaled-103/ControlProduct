@@ -16,7 +16,6 @@
   "dependencies": {
     "@vueup/vue-quill": "^1.2.0",
     "bootstrap-icons": "^1.10.5",
-    "gh-pages": "^6.0.0",
     "vue-toastification": "^2.0.0-rc.5"
   }
 }
