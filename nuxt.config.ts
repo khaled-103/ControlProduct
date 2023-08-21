@@ -2,5 +2,4 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/global.css'],
-  router: { options: { strict: true, }, }
 })
