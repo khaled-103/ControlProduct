@@ -106,7 +106,6 @@
 </template>
 
 <script setup>
-import { useToast } from "vue-toastification";
 
 const props = defineProps({
   type: { default: "picture" },
@@ -114,7 +113,6 @@ const props = defineProps({
   forReading: { default: false, type: Boolean },
   srcIfForReading: { type: String, default: "" },
 });
-const toast = useToast();
 const showLoading = ref(false);
 const fileAccept = computed(() => {
   return props.type == "video" ? "video/*" : "image/*";
@@ -132,7 +130,7 @@ function validateFileType() {
   } else if (!["mkv", "mp4", "ogg", "ogv"].includes(extension)) return false;
   return true;
 }
-function validateImage(){
+function validateImage() {
   const img = document.createElement("img");
   const objectURL = URL.createObjectURL(fileUpload.value);
   img.src = objectURL;
@@ -142,23 +140,22 @@ function validateImage(){
 
     if (img.width > 500 || img.height > 500) {
       fileUpload.value = null;
-      return toast.error("The image's width or height is greater than 500px");
+      return alert("The image's width or height is greater than 500px");
     }
   };
   // document.body.appendChild(img);
   if (fileUpload.value.size > 3000000) {
     fileUpload.value = null;
-    return toast.error("Allowed JPG, GIF or PNG ,  500*500 pixle Maximum 3 mb");
+    return alert("Allowed JPG, GIF or PNG ,  500*500 pixle Maximum 3 mb");
   }
 }
 function validateFile() {
   if (!validateFileType()) {
     fileUpload.value = null;
-    toast.error("not valid file type extinsion");
+    alert("not valid file type extinsion");
     return false;
   }
-  if(props.type == 'picture')
-    validateImage();
+  if (props.type == "picture") validateImage();
 }
 
 function uploadFile($event) {
