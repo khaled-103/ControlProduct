@@ -2,7 +2,7 @@
   <div>
     <the-side-bar :toggleSideBar="toggleSideBar" ref="sideBar"></the-side-bar>
     <main>
-    
+      
       <toggle-side-bar-button @click="toggleSideBar = !toggleSideBar" />
       <ProductsPictureSection id="picture"></ProductsPictureSection>
       <ProductDetailsSection id="detail"></ProductDetailsSection>
@@ -63,6 +63,7 @@
 
 <script setup>
 /** control toggle sidebar */
+
 const toggleSideBar = ref(false);
 </script>
 

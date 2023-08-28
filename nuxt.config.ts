@@ -2,9 +2,15 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/global.css'],
-  ssr:false,
-  app: {
-    baseURL: '/ControlProduct/', // baseURL: '/<repository>/'
-    buildAssetsDir: 'assets', // don't use "_" at the begining of the folder name to avoids nojkill conflict
+  modules:[
+    '@nuxtjs/i18n',
+  ],
+  i18n: {
+    vueI18n: './i18n.config.ts' ,
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',  // recommended
+    }// if you are using custom path, default 
   }
 })

@@ -1,52 +1,73 @@
 <template>
   <aside ref="sideBar" class="side-bar side-bar-hide">
-    <div class="side-bar-conent">
-      <h2 class="logo"><i class="bi bi-activity"></i><span class="ms-3">Side Menue</span></h2>
-      <ul>
+    <div class="mt-2 mb-3 image-holder text-center">
+      <img
+src="/images/logo.jpg"
+      alt=""
+      />
+    </div>
+    <div class="  side-bar-conent d-flex flex-column justify-content-center">
+      <ul >
         <li>
-          <a :class="{active:sectionId == '#picture'}" href="#picture" class="d-flex"
-            ><i class="bi bi-image"></i
-            ><span class="ms-3">Picture</span></a
+          <a
+            :class="{ active: sectionId == '#picture' }"
+            href="#picture"
+            class="d-flex"
+            ><i class="bi bi-image"></i><span class="ms-3">Picture</span></a
           >
         </li>
         <li>
-          <a :class="{active:sectionId == '#detail'}" href="#detail" class="d-flex"
+          <a
+            :class="{ active: sectionId == '#detail' }"
+            href="#detail"
+            class="d-flex"
             ><i class="bi bi-ticket-detailed"></i
             ><span class="ms-3">Details</span></a
           >
         </li>
         <li>
-          <a :class="{active:sectionId == '#price'}" href="#price" class="d-flex"
-            ><i class="bi bi-cash-coin"></i
-            ><span class="ms-3">Price</span></a
+          <a
+            :class="{ active: sectionId == '#price' }"
+            href="#price"
+            class="d-flex"
+            ><i class="bi bi-cash-coin"></i><span class="ms-3">Price</span></a
           >
         </li>
         <li>
-          <a :class="{active:sectionId == '#weight'}" href="#weight" class="d-flex"
-            ><i class="bi bi-mastodon"></i
-            ><span class="ms-3">Weight</span></a
+          <a
+            :class="{ active: sectionId == '#weight' }"
+            href="#weight"
+            class="d-flex"
+            ><i class="bi bi-mastodon"></i><span class="ms-3">Weight</span></a
           >
         </li>
         <li>
-          <a :class="{active:sectionId == '#barcode'}" href="#barcode" class="d-flex"
-            ><i class="bi bi-upc-scan"></i
-            ><span class="ms-3">Barcode</span></a
+          <a
+            :class="{ active: sectionId == '#barcode' }"
+            href="#barcode"
+            class="d-flex"
+            ><i class="bi bi-upc-scan"></i><span class="ms-3">Barcode</span></a
           >
         </li>
         <li>
-          <a :class="{active:sectionId == '#seo'}" href="#seo" class="d-flex"
-            ><i class="bi bi-binoculars"></i
-            ><span class="ms-3">SEO</span></a
+          <a :class="{ active: sectionId == '#seo' }" href="#seo" class="d-flex"
+            ><i class="bi bi-binoculars"></i><span class="ms-3">SEO</span></a
           >
         </li>
         <li>
-          <a :class="{active:sectionId == '#license'}" href="#license" class="d-flex"
+          <a
+            :class="{ active: sectionId == '#license' }"
+            href="#license"
+            class="d-flex"
             ><i class="bi bi-person-badge"></i
             ><span class="ms-3">License</span></a
           >
         </li>
         <li>
-          <a :class="{active:sectionId == '#attachment'}" href="#attachment" class="d-flex"
+          <a
+            :class="{ active: sectionId == '#attachment' }"
+            href="#attachment"
+            class="d-flex"
             ><i class="bi bi-paperclip"></i
             ><span class="ms-3">Attachment</span></a
           >
@@ -73,26 +94,25 @@ watch(
   }
 );
 const props = defineProps(["toggleSideBar"]);
-const sectionId = computed(()=>{
-  return route.hash || '#picture';
-})
+const sectionId = computed(() => {
+  return route.hash || "#picture";
+});
 </script>
 
 <style scoped>
-.logo{
-  color: orange;
-  font-size: 24px;
+.logo {
+  color: var(--secondery-dark1);
+
   padding-left: 1rem;
   padding: 1rem 0 1rem 1rem;
-  border-bottom: 1px solid var(--secondery-dark1);
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  
+  /* border-bottom: 1px solid var(--secondery-dark1); */
 }
 
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  margin-top: 10px;
 }
 ul li a {
   text-decoration: none;
@@ -100,16 +120,16 @@ ul li a {
   padding: 10px 0 10px 10px;
   display: block;
   /* font-family: monospace; */
-  transition: all .25s;
+  transition: all 0.25s;
 }
-ul li a span{
+ul li a span {
   color: #f7f7f7;
 }
-ul li a i{
+ul li a i {
   color: #fefefe;
 }
 ul li a:hover {
-  background-color:var(--primary-dark3);
+  background-color: var(--primary-dark3);
 }
 .side-bar {
   position: fixed;
@@ -146,8 +166,15 @@ ul li a:hover {
     display: block;
   }
 }
-.active{
-  background-color: var(--primary-blue);
-  border-left: 2px solid white;
+.active {
+  background-color: #267dab;
+  border-left: 2px solid #f7f7f7;
+}
+
+.image-holder img{
+  width: 100px;
+  object-fit: cover;
+  height: 100px;
+  border-radius: 50%;
 }
 </style>
